@@ -3,26 +3,48 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/FirstFragment">
+    app:startDestination="@id/ListaVendaFragment">
 
     <fragment
-        android:id="@+id/FirstFragment"
-        android:name="ipg.mcm.cacaub.FirstFragment"
-        android:label="@string/first_fragment_label"
-        tools:layout="@layout/fragment_first">
-
+        android:id="@+id/ListaVendaFragment"
+        android:name="ipg.mcm.cacaub.ListaVendaFragment"
+        android:label="@string/lista_venda_fragment_label"
+        tools:layout="@layout/fragment_lista_venda">
         <action
-            android:id="@+id/action_FirstFragment_to_SecondFragment"
-            app:destination="@id/SecondFragment" />
+            android:id="@+id/action_ListaVendaFragment_to_NovoVendaFragment"
+            app:destination="@id/NovoVendaFragment" />
+        <action
+            android:id="@+id/action_ListaVendaFragment_to_editaVendaFragment"
+            app:destination="@id/EditaVendaFragment" />
+        <action
+            android:id="@+id/action_ListaVendaFragment_to_eliminaVendaFragment"
+            app:destination="@id/eliminaVendaFragment" />
     </fragment>
     <fragment
-        android:id="@+id/SecondFragment"
-        android:name="ipg.mcm.cacaub.SecondFragment"
-        android:label="@string/second_fragment_label"
-        tools:layout="@layout/fragment_second">
-
+        android:id="@+id/NovoVendaFragment"
+        android:name="ipg.mcm.cacaub.NovoVendaFragment"
+        android:label="@string/nova_venda_fragment_label"
+        tools:layout="@layout/fragment_novo_venda">
         <action
-            android:id="@+id/action_SecondFragment_to_FirstFragment"
-            app:destination="@id/FirstFragment" />
+            android:id="@+id/action_NovoVendaFragment_to_ListaVendaFragment"
+            app:destination="@id/ListaVendaFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/EditaVendaFragment"
+        android:name="ipg.mcm.cacaub.EditaVendaFragment"
+        android:label="@string/altera_venda_fragment_label"
+        tools:layout="@layout/fragment_edita_venda">
+        <action
+            android:id="@+id/action_editaVendaFragment_to_ListaVendaFragment"
+            app:destination="@id/ListaVendaFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/eliminaVendaFragment"
+        android:name="ipg.mcm.cacaub.EliminaVendaFragment"
+        android:label="@string/elimina_venda_fragment_label"
+        tools:layout="@layout/fragment_elimina_seminario">
+        <action
+            android:id="@+id/action_eliminaVendaFragment_to_ListaVendaFragment"
+            app:destination="@id/ListaVendaFragment" />
     </fragment>
 </navigation>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EliminaVendaFragment">
+
+    <TextView
+        android:id="@+id/textViewLabelTitulo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margem_atividade"
+        android:layout_marginTop="@dimen/margem_atividade"
+        android:layout_marginEnd="@dimen/margem_atividade"
+        android:text="@string/descricao"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewNome"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margem_entre_campos"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintEnd_toEndOf="@+id/textViewLabelTitulo"
+        app:layout_constraintStart_toStartOf="@+id/textViewLabelTitulo"
+        app:layout_constraintTop_toBottomOf="@+id/textViewLabelTitulo"
+        tools:text="Título" />
+
+    <TextView
+        android:id="@+id/textViewLabelSumario"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margem_atividade"
+        android:text="@string/venda"
+        app:layout_constraintEnd_toEndOf="@+id/textViewNome"
+        app:layout_constraintStart_toStartOf="@+id/textViewNome"
+        app:layout_constraintTop_toBottomOf="@+id/textViewNome" />
+
+    <TextView
+        android:id="@+id/textViewSumario"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margem_entre_campos"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintEnd_toEndOf="@+id/textViewLabelSumario"
+        app:layout_constraintStart_toStartOf="@+id/textViewLabelSumario"
+        app:layout_constraintTop_toBottomOf="@+id/textViewLabelSumario"
+        tools:text="Sumário" />
+
+    <TextView
+        android:id="@+id/textViewLabelOrador"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margem_atividade"
+        android:text="@string/empresa"
+        app:layout_constraintEnd_toEndOf="@+id/textViewSumario"
+        app:layout_constraintStart_toStartOf="@+id/textViewSumario"
+        app:layout_constraintTop_toBottomOf="@+id/textViewSumario" />
+
+    <TextView
+        android:id="@+id/textViewCategoria"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margem_entre_campos"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintEnd_toEndOf="@+id/textViewLabelOrador"
+        app:layout_constraintStart_toStartOf="@+id/textViewLabelOrador"
+        app:layout_constraintTop_toBottomOf="@+id/textViewLabelOrador"
+        tools:text="Orador" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

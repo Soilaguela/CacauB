@@ -1,39 +1,41 @@
 package ipg.mcm.cacaub
 
 import android.database.Cursor
+import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
+import android.widget.SimpleCursorAdapter
+import android.widget.Toast
 import androidx.loader.app.LoaderManager
 import androidx.loader.content.CursorLoader
 import androidx.loader.content.Loader
 import androidx.navigation.fragment.findNavController
-import androidx.recyclerview.widget.LinearLayoutManager
-import ipg.mcm.cacaub.databinding.FragmentListaVendaBinding
+import ipg.mcm.cacaub.databinding.FragmentEditaVendaBinding
 
 /**
- * A simple [Fragment] subclass as the default destination in the navigation.
+ * A simple [Fragment] subclass.
+ * Use the [EditaVendaFragment.newInstance] factory method to
+ * create an instance of this fragment.
  */
-class ListaVendaFragment : Fragment(), LoaderManager.LoaderCallbacks<Cursor> {
-
-    private var _binding: FragmentListaVendaBinding? = null
+class EditaVendaFragment : Fragment(), LoaderManager.LoaderCallbacks<Cursor> {
+    private var _binding: FragmentEditaVendaBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
-    private var adapterCacauB : AdapterCacauB? = null
+
+    private lateinit var venda : Venda
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
-        _binding = FragmentListaVendaBinding.inflate(inflater, container, false)
+        _binding = FragmentEditaVendaBinding.inflate(inflater, container, false)
         return binding.root
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -41,21 +43,70 @@ class ListaVendaFragment : Fragment(), LoaderManager.LoaderCallbacks<Cursor> {
 
         val activity = activity as MainActivity
         activity.fragment = this
-        activity.menuAtual = R.menu.menu_lista_venda
-        activity.vendaSelecionado = null
+        activity.menuAtual = R.menu.menu_altera_venda
 
-        adapterCacauB = AdapterCacauB(this)
+        venda = activity.vendaSelecionado!!
+
+        binding.editTextTitulo.setText(venda.descricao)
+        binding.editTextValor.setText(venda.valor)
 
         LoaderManager.getInstance(this)
-            .initLoader(ID_LOADER_VENDA, null, this)
-
-        binding.recyclerViewVenda.layoutManager = LinearLayoutManager(requireContext())
-        binding.recyclerViewVenda.adapter = adapterCacauB
+            .initLoader(ID_LOADER_EMPRESA, null, this)
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    fun voltaListaVenda() = findNavController().navigate(R.id.action_editaVendaFragment_to_ListaVendaFragment)
+
+    fun guardar() {
+        venda.descricao = binding.editTextTitulo.text.toString()
+        if (venda.descricao.isBlank()) {
+            binding.editTextTitulo.setError(getString(R.string.titulo_obrigatorio))
+            binding.editTextTitulo.requestFocus()
+            return
+        }
+
+        venda.valor = binding.editTextValor.text.toString()
+        if (venda.valor.isBlank()) {
+            binding.editTextValor.setError(getString(R.string.valor_obrigatorio))
+            binding.editTextValor.requestFocus()
+            return
+        }
+
+        venda.idEmpresa = binding.spinnerEmpresa.selectedItemId
+
+        val uriVenda = Uri.withAppendedPath(
+            ContentProviderCacauB.ENDERECO_VENDA,
+            venda.id.toString()
+        )
+
+        val registos = requireActivity().contentResolver.update(
+            uriVenda,
+            venda.toContentValues(),
+            null,
+            null
+        )
+
+        if (registos != 1) {
+            Toast.makeText(activity, getString(R.string.erro_guardar_seminario), Toast.LENGTH_LONG).show()
+            return
+        }
+
+        Toast.makeText(activity, getString(R.string.venda_alterado), Toast.LENGTH_LONG).show()
+        voltaListaVenda()
+    }
+
+    fun processaOpcaoMenu(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.action_guardar_novo -> guardar()
+            R.id.action_cancelar_novo -> voltaListaVenda()
+            else -> return false
+        }
+
+        return true
     }
 
     /**
@@ -68,14 +119,14 @@ class ListaVendaFragment : Fragment(), LoaderManager.LoaderCallbacks<Cursor> {
      * @param args Any arguments supplied by the caller.
      * @return Return a new Loader instance that is ready to start loading.
      */
-    override fun onCreateLoader(id: Int, args: Bundle?): Loader<Cursor> =
+    override fun onCreateLoader(id: Int, args: Bundle?): Loader<Cursor>  =
         CursorLoader(
             requireContext(),
-            ContentProviderCacauB.ENDERECO_VENDA,
-            TabelaVenda.TODOS_CAMPOS,
+            ContentProviderCacauB.ENDERECO_EMPRESA,
+            TabelaEpresa.TODOS_CAMPOS,
             null,
             null,
-            TabelaVenda.CAMPO_DESCRICAO
+            TabelaEpresa.CAMPO_NOME
         )
 
     /**
@@ -122,7 +173,16 @@ class ListaVendaFragment : Fragment(), LoaderManager.LoaderCallbacks<Cursor> {
      * @param data The data generated by the Loader.
      */
     override fun onLoadFinished(loader: Loader<Cursor>, data: Cursor?) {
-        adapterCacauB!!.cursor = data
+        binding.spinnerEmpresa.adapter = SimpleCursorAdapter(
+            requireContext(),
+            android.R.layout.simple_list_item_1,
+            data,
+            arrayOf<String>(TabelaEpresa.CAMPO_NOME),
+            intArrayOf(android.R.id.text1),
+            0
+        )
+
+        atualizaEmpresaSelecionado()
     }
 
     /**
@@ -136,27 +196,21 @@ class ListaVendaFragment : Fragment(), LoaderManager.LoaderCallbacks<Cursor> {
      * @param loader The Loader that is being reset.
      */
     override fun onLoaderReset(loader: Loader<Cursor>) {
-        adapterCacauB!!.cursor = null
+        if (_binding == null) return
+        binding.spinnerEmpresa.adapter = null
     }
 
-    fun mudaNovoVenda() = findNavController().navigate(R.id.action_ListaVendaFragment_to_NovoVendaFragment)
-
-    private fun mudaEliminarVenda()  = findNavController().navigate(R.id.action_ListaVendaFragment_to_eliminaVendaFragment)
-
-    private fun mudaAlterarVenda()  = findNavController().navigate(R.id.action_ListaVendaFragment_to_editaVendaFragment)
-
-    fun processaOpcaoMenu(item: MenuItem): Boolean {
-        when (item.itemId) {
-            R.id.action_novo -> mudaNovoVenda()
-            R.id.action_alterar -> mudaAlterarVenda()
-            R.id.action_eliminar -> mudaEliminarVenda()
-            else -> return false
+    private fun atualizaEmpresaSelecionado() {
+        val ultimaEmpresa = binding.spinnerEmpresa.count - 1
+        for (i in 0..ultimaEmpresa) {
+            if (venda.idEmpresa == binding.spinnerEmpresa.getItemIdAtPosition(i)) {
+                binding.spinnerEmpresa.setSelection(i)
+                return
+            }
         }
-
-        return true
     }
 
     companion object {
-        const val ID_LOADER_VENDA = 0
+        const val ID_LOADER_EMPRESA = 0
     }
 }

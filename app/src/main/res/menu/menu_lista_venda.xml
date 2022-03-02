@@ -1,0 +1,25 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="pt.ipg.seminarios.MainActivity">
+    <item
+        android:id="@+id/action_novo"
+        android:icon="@android:drawable/ic_menu_add"
+        android:title="@string/novo"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_alterar"
+        android:icon="@android:drawable/ic_menu_edit"
+        android:title="@string/alterar"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_eliminar"
+        android:icon="@android:drawable/ic_menu_delete"
+        android:title="@string/eliminar"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_settings"
+        android:orderInCategory="101"
+        android:title="@string/action_settings"
+        app:showAsAction="never" />
+</menu>
