@@ -9,10 +9,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
-import ipg.mcm.cacaub.databinding.FragmentEliminaSeminarioBinding
+import ipg.mcm.cacaub.databinding.FragmentEliminaVendaBinding
 
 class EliminaVendaFragment : Fragment() {
-    private var _binding: FragmentEliminaSeminarioBinding? = null
+    private var _binding: FragmentEliminaVendaBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -24,7 +24,7 @@ class EliminaVendaFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentEliminaSeminarioBinding.inflate(inflater, container, false)
+        _binding = FragmentEliminaVendaBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -37,9 +37,9 @@ class EliminaVendaFragment : Fragment() {
 
         venda = activity.vendaSelecionado!!
 
-        binding.textViewTitulo.setText(venda.descricao)
-        binding.textViewSumario.setText(venda.valor)
-        binding.textViewOrador.setText(venda.nomeEmpresa)
+        binding.textViewDescricao.setText(venda.descricao)
+        binding.textViewValor.setText(venda.valor)
+        binding.textViewNomeEmpresa.setText(venda.nomeEmpresa)
     }
 
     override fun onDestroyView() {

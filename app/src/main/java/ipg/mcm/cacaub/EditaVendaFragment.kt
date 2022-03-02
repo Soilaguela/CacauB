@@ -47,7 +47,7 @@ class EditaVendaFragment : Fragment(), LoaderManager.LoaderCallbacks<Cursor> {
 
         venda = activity.vendaSelecionado!!
 
-        binding.editTextTitulo.setText(venda.descricao)
+        binding.editTextDescricao.setText(venda.descricao)
         binding.editTextValor.setText(venda.valor)
 
         LoaderManager.getInstance(this)
@@ -62,10 +62,10 @@ class EditaVendaFragment : Fragment(), LoaderManager.LoaderCallbacks<Cursor> {
     fun voltaListaVenda() = findNavController().navigate(R.id.action_editaVendaFragment_to_ListaVendaFragment)
 
     fun guardar() {
-        venda.descricao = binding.editTextTitulo.text.toString()
+        venda.descricao = binding.editTextDescricao.text.toString()
         if (venda.descricao.isBlank()) {
-            binding.editTextTitulo.setError(getString(R.string.titulo_obrigatorio))
-            binding.editTextTitulo.requestFocus()
+            binding.editTextDescricao.setError(getString(R.string.titulo_obrigatorio))
+            binding.editTextDescricao.requestFocus()
             return
         }
 

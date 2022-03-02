@@ -62,7 +62,7 @@ class MainActivity : AppCompatActivity() {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         if (item.itemId == R.id.action_settings) {
-            Toast.makeText(this, "Seminários v. 1.0", Toast.LENGTH_LONG).show()
+            Toast.makeText(this, "CacauB v. 1.0", Toast.LENGTH_LONG).show()
             return true
         }
 

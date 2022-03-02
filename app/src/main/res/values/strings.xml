@@ -23,4 +23,5 @@
     <string name="erro_eliminar_seminario">Erro ao eliminar Venda</string>
     <string name="titulo_obrigatorio">Preencha a Descrição</string>
     <string name="valor_obrigatorio">Preencha o valor</string>
+    <string name="Valor">Valor</string>
 </resources>

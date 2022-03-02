@@ -8,11 +8,13 @@
         <entry key="..\:/Users/35192/Desktop/Mestrado/CacauB/app/src/main/res/layout/content_main.xml" value="0.1" />
         <entry key="..\:/Users/35192/Desktop/Mestrado/CacauB/app/src/main/res/layout/fragment_edita_seminario.xml" value="0.1" />
         <entry key="..\:/Users/35192/Desktop/Mestrado/CacauB/app/src/main/res/layout/fragment_edita_venda.xml" value="0.2" />
-        <entry key="..\:/Users/35192/Desktop/Mestrado/CacauB/app/src/main/res/layout/fragment_elimina_seminario.xml" value="0.15" />
+        <entry key="..\:/Users/35192/Desktop/Mestrado/CacauB/app/src/main/res/layout/fragment_elimina_seminario.xml" value="0.33" />
         <entry key="..\:/Users/35192/Desktop/Mestrado/CacauB/app/src/main/res/layout/fragment_lista_seminarios.xml" value="0.15" />
         <entry key="..\:/Users/35192/Desktop/Mestrado/CacauB/app/src/main/res/layout/fragment_novo_seminario.xml" value="0.1" />
+        <entry key="..\:/Users/35192/Desktop/Mestrado/CacauB/app/src/main/res/layout/fragment_novo_venda.xml" value="0.22" />
         <entry key="..\:/Users/35192/Desktop/Mestrado/CacauB/app/src/main/res/layout/item_seminario.xml" value="0.1" />
         <entry key="..\:/Users/35192/Desktop/Mestrado/CacauB/app/src/main/res/layout/item_venda.xml" value="0.2" />
+        <entry key="..\:/Users/35192/Desktop/Mestrado/CacauB/app/src/main/res/menu/menu_elimina_venda.xml" value="0.1" />
       </map>
     </option>
   </component>

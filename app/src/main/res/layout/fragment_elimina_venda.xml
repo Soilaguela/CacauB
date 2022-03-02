@@ -19,7 +19,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textViewNome"
+        android:id="@+id/textViewDescricao"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margem_entre_campos"
@@ -30,25 +30,25 @@
         tools:text="Título" />
 
     <TextView
-        android:id="@+id/textViewLabelSumario"
+        android:id="@+id/textViewLabelValor"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margem_atividade"
-        android:text="@string/venda"
-        app:layout_constraintEnd_toEndOf="@+id/textViewNome"
-        app:layout_constraintStart_toStartOf="@+id/textViewNome"
-        app:layout_constraintTop_toBottomOf="@+id/textViewNome" />
+        android:text="@string/Valor"
+        app:layout_constraintEnd_toEndOf="@+id/textViewDescricao"
+        app:layout_constraintStart_toStartOf="@+id/textViewDescricao"
+        app:layout_constraintTop_toBottomOf="@+id/textViewDescricao" />
 
     <TextView
-        android:id="@+id/textViewSumario"
+        android:id="@+id/textViewValor"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margem_entre_campos"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        app:layout_constraintEnd_toEndOf="@+id/textViewLabelSumario"
-        app:layout_constraintStart_toStartOf="@+id/textViewLabelSumario"
-        app:layout_constraintTop_toBottomOf="@+id/textViewLabelSumario"
-        tools:text="Sumário" />
+        app:layout_constraintEnd_toEndOf="@+id/textViewLabelValor"
+        app:layout_constraintStart_toStartOf="@+id/textViewLabelValor"
+        app:layout_constraintTop_toBottomOf="@+id/textViewLabelValor"
+        tools:text="Valor" />
 
     <TextView
         android:id="@+id/textViewLabelOrador"
@@ -56,12 +56,12 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margem_atividade"
         android:text="@string/empresa"
-        app:layout_constraintEnd_toEndOf="@+id/textViewSumario"
-        app:layout_constraintStart_toStartOf="@+id/textViewSumario"
-        app:layout_constraintTop_toBottomOf="@+id/textViewSumario" />
+        app:layout_constraintEnd_toEndOf="@+id/textViewValor"
+        app:layout_constraintStart_toStartOf="@+id/textViewValor"
+        app:layout_constraintTop_toBottomOf="@+id/textViewValor" />
 
     <TextView
-        android:id="@+id/textViewCategoria"
+        android:id="@+id/textViewNomeEmpresa"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margem_entre_campos"
@@ -69,6 +69,6 @@
         app:layout_constraintEnd_toEndOf="@+id/textViewLabelOrador"
         app:layout_constraintStart_toStartOf="@+id/textViewLabelOrador"
         app:layout_constraintTop_toBottomOf="@+id/textViewLabelOrador"
-        tools:text="Orador" />
+        tools:text="Empresa" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
