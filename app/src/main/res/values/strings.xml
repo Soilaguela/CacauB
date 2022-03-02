@@ -1,12 +1,26 @@
 <resources>
     <string name="app_name">CacauB</string>
     <string name="action_settings">Settings</string>
-    <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
-    <string name="next">Next</string>
-    <string name="previous">Previous</string>
 
-    <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="lista_venda_fragment_label">CacauB</string>
+    <string name="nova_venda_fragment_label">Nova Venda</string>
+    <string name="altera_venda_fragment_label">Alterar Venda</string>
+    <string name="elimina_venda_fragment_label">Eliminar Venda</string>
+
+    <string name="novo">Nova</string>
+    <string name="alterar">Alterar</string>
+    <string name="eliminar">Eliminar</string>
+    <string name="descricao">Descrição</string>
+    <string name="venda">Venda</string>
+    <string name="empresa">Empresa</string>
+    <string name="guardar">Guardar</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="novo_venda_guardado">Venda registrada com sucesso</string>
+    <string name="venda_alterado">Venda alterado com sucesso</string>
+    <string name="seminario_eliminado">Venda eliminado com sucesso</string>
+    <string name="erro_guardar_seminario">Erro ao guardar Venda</string>
+    <string name="erro_eliminar_seminario">Erro ao eliminar Venda</string>
+    <string name="titulo_obrigatorio">Preencha a Descrição</string>
+    <string name="valor_obrigatorio">Preencha o valor</string>
 </resources>
