@@ -6,7 +6,7 @@ import ipg.mcm.cacaub.TabelaBD
 
 
 data class User(val id: Long =-1, val name: String, val email: String, val password: String) {
-    fun toContentValues() : ContentValues {
+    /*fun toContentValues() : ContentValues {
         val valores = ContentValues()
 
         valores.put(Tabelauser.CAMPO_NOME, name)
@@ -22,5 +22,5 @@ data class User(val id: Long =-1, val name: String, val email: String, val passw
             password = cursor.getString(cursor.getColumnIndex(Tabelauser.CAMPO_PASS)),
             id = cursor.getLong(cursor.getColumnIndex(TabelaBD.CAMPO_ID))
         )
-    }
+    }*/
 }

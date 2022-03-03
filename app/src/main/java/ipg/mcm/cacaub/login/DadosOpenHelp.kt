@@ -8,7 +8,8 @@ import android.database.sqlite.SQLiteOpenHelper
 import java.util.*
 import java.util.ArrayList as ArrayList1
 
-class DadosOpenHelp(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
+class DadosOpenHelp (context: Context) :
+    SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
     // create table sql query
     private val CREATE_USER_TABLE = ("CREATE TABLE " + TABLE_USER + "("
             + COLUMN_USER_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," + COLUMN_USER_NAME + " TEXT,"
