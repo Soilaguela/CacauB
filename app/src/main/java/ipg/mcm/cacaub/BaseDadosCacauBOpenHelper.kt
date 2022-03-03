@@ -17,15 +17,6 @@ class BaseDadosCacauBOpenHelper(context: Context?)
         TabelaVenda(db!!).cria()
 
         insereEmpresa(TabelaEpresa(db), Empresa("SatoCau", "Venda de Cacau"))
-        insereEmpresa(TabelaEpresa(db), Empresa("CacauB", "Venda de Cacau Biologico"))
-        insereEmpresa(TabelaEpresa(db), Empresa("SatoCau", "Venda de Cacau"))
-        insereEmpresa(TabelaEpresa(db), Empresa("CacauB", "Venda de Cacau Biologico"))
-        insereEmpresa(TabelaEpresa(db), Empresa("SatoCau", "Venda de Cacau"))
-        insereEmpresa(TabelaEpresa(db), Empresa("CacauB", "Venda de Cacau Biologico"))
-        insereEmpresa(TabelaEpresa(db), Empresa("SatoCau", "Venda de Cacau"))
-        insereEmpresa(TabelaEpresa(db), Empresa("CacauB", "Venda de Cacau Biologico"))
-        insereEmpresa(TabelaEpresa(db), Empresa("SatoCau", "Venda de Cacau"))
-        insereEmpresa(TabelaEpresa(db), Empresa("CacauB", "Venda de Cacau Biologico"))
 
         val nomeEmpresa = "CacauB"
         val categoriaEmpresa = "Cacau Biologico"
@@ -35,16 +26,6 @@ class BaseDadosCacauBOpenHelper(context: Context?)
             insereEmpresa(TabelaEpresa(db), Empresa(nomeEmpresa, categoriaEmpresa)),
 
         )
-        insereVenda(TabelaVenda(db), Venda(venda.descricao, venda.valor, venda.idEmpresa, venda.nomeEmpresa))
-        insereVenda(TabelaVenda(db), Venda(venda.descricao, venda.valor, venda.idEmpresa, venda.nomeEmpresa))
-        insereVenda(TabelaVenda(db), Venda(venda.descricao, venda.valor, venda.idEmpresa, venda.nomeEmpresa))
-        insereVenda(TabelaVenda(db), Venda(venda.descricao, venda.valor, venda.idEmpresa, venda.nomeEmpresa))
-        insereVenda(TabelaVenda(db), Venda(venda.descricao, venda.valor, venda.idEmpresa, venda.nomeEmpresa))
-        insereVenda(TabelaVenda(db), Venda(venda.descricao, venda.valor, venda.idEmpresa, venda.nomeEmpresa))
-        insereVenda(TabelaVenda(db), Venda(venda.descricao, venda.valor, venda.idEmpresa, venda.nomeEmpresa))
-        insereVenda(TabelaVenda(db), Venda(venda.descricao, venda.valor, venda.idEmpresa, venda.nomeEmpresa))
-        insereVenda(TabelaVenda(db), Venda(venda.descricao, venda.valor, venda.idEmpresa, venda.nomeEmpresa))
-        insereVenda(TabelaVenda(db), Venda(venda.descricao, venda.valor, venda.idEmpresa, venda.nomeEmpresa))
         insereVenda(TabelaVenda(db), Venda(venda.descricao, venda.valor, venda.idEmpresa, venda.nomeEmpresa))
     }
 
