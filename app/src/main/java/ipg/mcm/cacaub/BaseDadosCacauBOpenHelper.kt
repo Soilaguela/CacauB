@@ -3,6 +3,8 @@ package ipg.mcm.cacaub
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
+import ipg.mcm.cacaub.login.Tabelauser
+import ipg.mcm.cacaub.login.User
 
 class BaseDadosCacauBOpenHelper(context: Context?)
     : SQLiteOpenHelper(context, NOME_BASE_DADOS, null, VERSAO_BASE_DADOS) {
@@ -16,6 +18,7 @@ class BaseDadosCacauBOpenHelper(context: Context?)
         TabelaEpresa(db!!).cria()
         TabelaVenda(db!!).cria()
 
+
         insereEmpresa(TabelaEpresa(db), Empresa("SatoCau", "Venda de Cacau"))
 
         val nomeEmpresa = "CacauB"
@@ -27,8 +30,9 @@ class BaseDadosCacauBOpenHelper(context: Context?)
 
         )
         insereVenda(TabelaVenda(db), Venda(venda.descricao, venda.valor, venda.idEmpresa, venda.nomeEmpresa))
-    }
 
+
+    }
 
 
     private fun insereEmpresa(tabelaEpresa: TabelaEpresa, empresa: Empresa) : Long {
