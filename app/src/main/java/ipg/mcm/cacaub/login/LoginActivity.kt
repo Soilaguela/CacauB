@@ -11,6 +11,7 @@ import androidx.core.widget.NestedScrollView
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
+import ipg.mcm.cacaub.MainActivity
 import ipg.mcm.cacaub.R
 
 class LoginActivity : AppCompatActivity() , View.OnClickListener {
@@ -90,12 +91,12 @@ class LoginActivity : AppCompatActivity() , View.OnClickListener {
         if (!inputValidation!!.isInputEditTextFilled(textInputEditTextPassword!!, textInputLayoutPassword!!, getString(R.string.error_message_email))) {
             return
         }
-      /*  if (databaseHelper!!.checkUser(textInputEditTextEmail!!.text.toString().trim { it <= ' ' }, textInputEditTextPassword!!.text.toString().trim { it <= ' ' })) {
-            val accountsIntent = Intent(activity, UsersListActivity::class.java)
+       if (databaseHelper!!.checkUser(textInputEditTextEmail!!.text.toString().trim { it <= ' ' }, textInputEditTextPassword!!.text.toString().trim { it <= ' ' })) {
+            val accountsIntent = Intent(activity, MainActivity::class.java)
             accountsIntent.putExtra("EMAIL", textInputEditTextEmail!!.text.toString().trim { it <= ' ' })
             emptyInputEditText()
             startActivity(accountsIntent)
-        }*/ else {
+        } else {
             // Snack Bar to show success message that record is wrong
             Snackbar.make(relativeLayout!!, getString(R.string.error_valid_email_password), Snackbar.LENGTH_LONG).show()
         }
