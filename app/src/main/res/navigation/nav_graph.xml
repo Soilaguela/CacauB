@@ -19,6 +19,9 @@
         <action
             android:id="@+id/action_ListaVendaFragment_to_eliminaVendaFragment"
             app:destination="@id/eliminaVendaFragment" />
+        <action
+            android:id="@+id/action_ListaVendaFragment_to_webActivity"
+            app:destination="@id/webActivity" />
     </fragment>
     <fragment
         android:id="@+id/NovoVendaFragment"
@@ -47,4 +50,11 @@
             android:id="@+id/action_eliminaVendaFragment_to_ListaVendaFragment"
             app:destination="@id/ListaVendaFragment" />
     </fragment>
+    <activity
+        android:id="@+id/webActivity"
+        android:name="ipg.mcm.cacaub.WebActivity"
+        android:label="activity_web"
+        tools:layout="@layout/activity_web" >
+
+    </activity>
 </navigation>

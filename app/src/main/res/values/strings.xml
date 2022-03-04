@@ -1,21 +1,21 @@
 <resources>
-    <string name="app_name">CacauB</string>
+    <string name="app_name" translatable="false">CacauB</string>
     <string name="action_settings">Settings</string>
 
     <!-- Strings used for fragments for navigation -->
     <string name="lista_venda_fragment_label">CacauB</string>
-    <string name="nova_venda_fragment_label">Nova Venda</string>
-    <string name="altera_venda_fragment_label">Alterar Venda</string>
-    <string name="elimina_venda_fragment_label">Eliminar Venda</string>
+    <string name="nova_venda_fragment_label" translatable="false">Nova Venda</string>
+    <string name="altera_venda_fragment_label" translatable="false">Alterar Venda</string>
+    <string name="elimina_venda_fragment_label" translatable="false">Eliminar Venda</string>
 
-    <string name="novo">Nova</string>
-    <string name="alterar">Alterar</string>
-    <string name="eliminar">Eliminar</string>
-    <string name="descricao">Descrição</string>
-    <string name="venda">Venda</string>
-    <string name="empresa">Empresa</string>
-    <string name="guardar">Guardar</string>
-    <string name="cancelar">Cancelar</string>
+    <string name="novo" translatable="false">Nova</string>
+    <string name="alterar" translatable="false">Alterar</string>
+    <string name="eliminar" translatable="false">Eliminar</string>
+    <string name="descricao" translatable="false">Descrição</string>
+    <string name="venda" translatable="false">Venda</string>
+    <string name="empresa" translatable="false">Empresa</string>
+    <string name="guardar" translatable="false">Guardar</string>
+    <string name="cancelar" translatable="false">Cancelar</string>
     <string name="novo_venda_guardado">Venda registrada com sucesso</string>
     <string name="venda_alterado">Venda alterado com sucesso</string>
     <string name="seminario_eliminado">Venda eliminado com sucesso</string>
@@ -45,5 +45,8 @@
     <string name="error_valid_email_password">E-mail ou senha incorretos</string>
     <string name="action_settings_1">Configurações</string>
     <string name="text_hello">Olá,</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="voltar">Voltar</string>
 
 </resources>

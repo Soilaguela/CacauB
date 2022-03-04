@@ -8,6 +8,7 @@
     android:paddingBottom="20dp"
     android:paddingLeft="20dp"
     android:paddingRight="20dp"
+
     android:paddingTop="20dp"
     tools:context=".login.RegisterActivity">
 
@@ -36,7 +37,7 @@
                 android:hint="@string/hint_name"
                 android:inputType="text"
                 android:maxLines="1"
-                android:textColor="@android:color/white" />
+                android:textColor="@android:color/black" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -53,7 +54,7 @@
                 android:hint="@string/hint_email"
                 android:inputType="text"
                 android:maxLines="1"
-                android:textColor="@android:color/white" />
+                android:textColor="@android:color/black" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -70,7 +71,7 @@
                 android:hint="@string/hint_password"
                 android:inputType="textPassword"
                 android:maxLines="1"
-                android:textColor="@android:color/white"
+                android:textColor="@android:color/black"
                 android:textColorHint="#616161" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -87,7 +88,7 @@
                 android:hint="@string/hint_confirm_password"
                 android:inputType="textPassword"
                 android:maxLines="1"
-                android:textColor="@android:color/white" />
+                android:textColor="@android:color/black" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -96,7 +97,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
-            android:background="@color/colorTextHint"
+            android:textColor="#4A4A4A"
+            android:background="@drawable/rounded_corner_button"
             android:text="@string/text_register" />
 
         <androidx.appcompat.widget.AppCompatTextView
@@ -105,6 +107,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
             android:gravity="center"
+            android:textColor="#4A4A4A"
             android:text="Já é um membro? Login"
             android:textSize="16dp" />
 

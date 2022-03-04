@@ -5,9 +5,6 @@ import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 
-import java.util.*
-import java.util.ArrayList as ArrayList1
-
 class DadosOpenHelp (context: Context) :
     SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
     // create table sql query
@@ -118,11 +115,7 @@ class DadosOpenHelp (context: Context) :
         // selection argument
         val selectionArgs = arrayOf(email)
         // query user table with condition
-        /**
-         * Here query function is used to fetch records from user table this function works like we use sql query.
-         * SQL query equivalent to this query function is
-         * SELECT user_id FROM user WHERE user_email = 'jack@androidtutorialshub.com';
-         */
+
         val cursor = db.query(TABLE_USER, //Table to query
             columns,        //columns to return
             selection,      //columns for the WHERE clause
